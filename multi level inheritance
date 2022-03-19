@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace  std;
+
+class Chemistry
+{
+public:
+    int score1;
+
+    void chemistryScore()
+    {
+        cout << "Enter the Score in Chemistry: ";
+        cin >> score1;
+    }
+
+
+};
+class Physics : public Chemistry
+{
+public:
+    int score2;
+    int total;
+    void physicsScore()
+    {
+        cout << "Enter the score in physics: ";
+        cin >> score2;
+    }
+
+
+};
+class Maths : public Physics
+{
+public:
+    int score3;
+    int  total;
+    void mathsScore()
+    {
+        cout << "Enter the score in maths: ";
+        cin >> score3;
+    }
+    void results()
+    {
+        total = score1 + score2 + score3;
+        cout << "The Final Score for Chemistry, Physics and Maths is " << total << endl;
+    }
+};
+int main ()
+{
+    Maths m;
+    m.chemistryScore();
+    m.physicsScore();
+    m.mathsScore();
+    m.results();
+
+    return  0;
+
+}
